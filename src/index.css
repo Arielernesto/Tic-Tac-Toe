@@ -4,8 +4,15 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: grid;
     place-content: center;
-    min-height: 100vh;
+    min-height: 100%;
+    min-width: 100%;
+    position: relative;
 }
+.root{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}   
 .board{
     width: fit-content;
     margin: 40px auto;
@@ -13,6 +20,18 @@ body{
 }
 .board h1{
     color: #eee;
+}
+.board button{
+    padding: 8px 12px;
+    margin: 25px;
+    background: transparent;
+    border: 2px solid #eee;
+    color: #eee;
+    width: 100px;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-weight: bold;
+    cursor: pointer;
 }
 .board .game{
     display: grid;
@@ -50,4 +69,45 @@ body{
 .square.is-selected{
     color: #fff;
     background-color: #09f;
+}
+.winner{
+    position: absolute;
+    color: #ccc;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:  0;
+    display: grid;
+    justify-content: center;
+    place-items: center;
+    background-color: rgba(0, 0, 0, .7);
+}
+.winner .text{
+    background-color: #111;
+    height: 300px;
+    width: 320px;
+    border: 2px solid #eee;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.winner .win{
+    margin: 0 auto;
+    width: fit-content;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    display: flex;
+    gap: 15px;
+}
+.board button:hover{
+    background-color: #eee;
+    color: #222;
+}
+.winner_content{
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
