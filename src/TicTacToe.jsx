@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react"
 
 const turns = {
@@ -28,10 +29,15 @@ const WinnerCombos = [
     [0,3,6]
 ]
 function TicTac() {
-    const [board, setBoard] = useState(
+    const [board, setBoard] = useState(() => {
+        const boardFromLocalStorage = window.localStorage.getItem('board')
+        return boardFromLocalStorage ? JSON.parse(boardFromLocalStorage) : 
         Array(9).fill(null)
-        )
-    const [turn, setTurn] = useState(turns.X)
+    })
+    const [turn, setTurn] = useState(() =>{
+        const turnFromLocalStorage = window.localStorage.getItem('turn')
+        return turnFromLocalStorage ?? turns.X
+})
     const  [winner, setWinner] = useState(null)
     const checkWinner = (boardToCheck)  =>{
         for (const combo of WinnerCombos) {
@@ -51,6 +57,8 @@ function TicTac() {
         setBoard(Array(9).fill(null))
         setTurn(turns.X)
         setWinner(null)
+        window.localStorage.removeItem('board')
+        window.localStorage.removeItem('turn')
     }
 
     //Verificar si hay empate
@@ -64,9 +72,13 @@ function TicTac() {
         newBoard[index] = turn
         setBoard(newBoard)
 
+
+        // Guardar en localStorage
+        window.localStorage.setItem('board', JSON.stringify(newBoard))
+       
         const newTurn = turn === turns.X ? turns.O : turns.X
         setTurn(newTurn)
-
+        window.localStorage.setItem('turn', newTurn)
         const newWinner = checkWinner(newBoard)
         if (newWinner) {
             setWinner(newWinner)
