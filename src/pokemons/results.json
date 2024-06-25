@@ -1,0 +1,714 @@
+[
+    {
+      "id": 1,
+      "pok_name": "bulbasaur",
+      "pok_height": 7,
+      "pok_weight": 69,
+      "pok_base_experience": 64,
+      "image": {
+        "id": 1,
+        "url": "pokeapi.co/storage/Pokemons/1.gif",
+        "imageable_id": 1,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 4,
+          "type_name": "poison",
+          "color": "background-color: rgb(85, 21, 82);",
+          "damage_type_id": 4,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 1,
+            "type_id": 4
+          }
+        },
+        {
+          "id": 12,
+          "type_name": "grass",
+          "color": "bg-success",
+          "damage_type_id": 12,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 1,
+            "type_id": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "pok_name": "ivysaur",
+      "pok_height": 10,
+      "pok_weight": 130,
+      "pok_base_experience": 142,
+      "image": {
+        "id": 2,
+        "url": "pokeapi.co/storage/Pokemons/2.gif",
+        "imageable_id": 2,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 4,
+          "type_name": "poison",
+          "color": "background-color: rgb(85, 21, 82);",
+          "damage_type_id": 4,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 2,
+            "type_id": 4
+          }
+        },
+        {
+          "id": 12,
+          "type_name": "grass",
+          "color": "bg-success",
+          "damage_type_id": 12,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 2,
+            "type_id": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "pok_name": "venusaur",
+      "pok_height": 20,
+      "pok_weight": 1000,
+      "pok_base_experience": 236,
+      "image": {
+        "id": 3,
+        "url": "pokeapi.co/storage/Pokemons/3.gif",
+        "imageable_id": 3,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 4,
+          "type_name": "poison",
+          "color": "background-color: rgb(85, 21, 82);",
+          "damage_type_id": 4,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 3,
+            "type_id": 4
+          }
+        },
+        {
+          "id": 12,
+          "type_name": "grass",
+          "color": "bg-success",
+          "damage_type_id": 12,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 3,
+            "type_id": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "pok_name": "charmander",
+      "pok_height": 6,
+      "pok_weight": 85,
+      "pok_base_experience": 62,
+      "image": {
+        "id": 4,
+        "url": "pokeapi.co/storage/Pokemons/4.gif",
+        "imageable_id": 4,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 10,
+          "type_name": "fire",
+          "color": "background-color: rgb(216, 97, 50);",
+          "damage_type_id": 10,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 4,
+            "type_id": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "pok_name": "charmeleon",
+      "pok_height": 11,
+      "pok_weight": 190,
+      "pok_base_experience": 142,
+      "image": {
+        "id": 5,
+        "url": "pokeapi.co/storage/Pokemons/5.gif",
+        "imageable_id": 5,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 10,
+          "type_name": "fire",
+          "color": "background-color: rgb(216, 97, 50);",
+          "damage_type_id": 10,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 5,
+            "type_id": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "pok_name": "charizard",
+      "pok_height": 17,
+      "pok_weight": 905,
+      "pok_base_experience": 240,
+      "image": {
+        "id": 6,
+        "url": "pokeapi.co/storage/Pokemons/6.gif",
+        "imageable_id": 6,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 3,
+          "type_name": "flying",
+          "color": "background-color: rgb(238, 233, 225);",
+          "damage_type_id": 3,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 6,
+            "type_id": 3
+          }
+        },
+        {
+          "id": 10,
+          "type_name": "fire",
+          "color": "background-color: rgb(216, 97, 50);",
+          "damage_type_id": 10,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 6,
+            "type_id": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "pok_name": "squirtle",
+      "pok_height": 5,
+      "pok_weight": 90,
+      "pok_base_experience": 63,
+      "image": {
+        "id": 7,
+        "url": "pokeapi.co/storage/Pokemons/7.gif",
+        "imageable_id": 7,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 11,
+          "type_name": "water",
+          "color": "bg-primary",
+          "damage_type_id": 11,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 7,
+            "type_id": 11
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "pok_name": "wartortle",
+      "pok_height": 10,
+      "pok_weight": 225,
+      "pok_base_experience": 142,
+      "image": {
+        "id": 8,
+        "url": "pokeapi.co/storage/Pokemons/8.gif",
+        "imageable_id": 8,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 11,
+          "type_name": "water",
+          "color": "bg-primary",
+          "damage_type_id": 11,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 8,
+            "type_id": 11
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "pok_name": "blastoise",
+      "pok_height": 16,
+      "pok_weight": 855,
+      "pok_base_experience": 239,
+      "image": {
+        "id": 9,
+        "url": "pokeapi.co/storage/Pokemons/9.gif",
+        "imageable_id": 9,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 11,
+          "type_name": "water",
+          "color": "bg-primary",
+          "damage_type_id": 11,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 9,
+            "type_id": 11
+          }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "pok_name": "caterpie",
+      "pok_height": 3,
+      "pok_weight": 29,
+      "pok_base_experience": 39,
+      "image": {
+        "id": 10,
+        "url": "pokeapi.co/storage/Pokemons/10.gif",
+        "imageable_id": 10,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 7,
+          "type_name": "bug",
+          "color": "background-color: rgb(79, 114, 59);",
+          "damage_type_id": 7,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 10,
+            "type_id": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "pok_name": "metapod",
+      "pok_height": 7,
+      "pok_weight": 99,
+      "pok_base_experience": 72,
+      "image": {
+        "id": 11,
+        "url": "pokeapi.co/storage/Pokemons/11.gif",
+        "imageable_id": 11,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 7,
+          "type_name": "bug",
+          "color": "background-color: rgb(79, 114, 59);",
+          "damage_type_id": 7,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 11,
+            "type_id": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "pok_name": "butterfree",
+      "pok_height": 11,
+      "pok_weight": 320,
+      "pok_base_experience": 178,
+      "image": {
+        "id": 12,
+        "url": "pokeapi.co/storage/Pokemons/12.gif",
+        "imageable_id": 12,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:11.000000Z",
+        "updated_at": "2024-04-20T20:31:11.000000Z"
+      },
+      "type": [
+        {
+          "id": 3,
+          "type_name": "flying",
+          "color": "background-color: rgb(238, 233, 225);",
+          "damage_type_id": 3,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 12,
+            "type_id": 3
+          }
+        },
+        {
+          "id": 7,
+          "type_name": "bug",
+          "color": "background-color: rgb(79, 114, 59);",
+          "damage_type_id": 7,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 12,
+            "type_id": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "pok_name": "weedle",
+      "pok_height": 3,
+      "pok_weight": 32,
+      "pok_base_experience": 39,
+      "image": {
+        "id": 13,
+        "url": "pokeapi.co/storage/Pokemons/13.gif",
+        "imageable_id": 13,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:12.000000Z",
+        "updated_at": "2024-04-20T20:31:12.000000Z"
+      },
+      "type": [
+        {
+          "id": 4,
+          "type_name": "poison",
+          "color": "background-color: rgb(85, 21, 82);",
+          "damage_type_id": 4,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 13,
+            "type_id": 4
+          }
+        },
+        {
+          "id": 7,
+          "type_name": "bug",
+          "color": "background-color: rgb(79, 114, 59);",
+          "damage_type_id": 7,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 13,
+            "type_id": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "pok_name": "kakuna",
+      "pok_height": 6,
+      "pok_weight": 100,
+      "pok_base_experience": 72,
+      "image": {
+        "id": 14,
+        "url": "pokeapi.co/storage/Pokemons/14.gif",
+        "imageable_id": 14,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:12.000000Z",
+        "updated_at": "2024-04-20T20:31:12.000000Z"
+      },
+      "type": [
+        {
+          "id": 4,
+          "type_name": "poison",
+          "color": "background-color: rgb(85, 21, 82);",
+          "damage_type_id": 4,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 14,
+            "type_id": 4
+          }
+        },
+        {
+          "id": 7,
+          "type_name": "bug",
+          "color": "background-color: rgb(79, 114, 59);",
+          "damage_type_id": 7,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 14,
+            "type_id": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "pok_name": "beedrill",
+      "pok_height": 10,
+      "pok_weight": 295,
+      "pok_base_experience": 178,
+      "image": {
+        "id": 15,
+        "url": "pokeapi.co/storage/Pokemons/15.gif",
+        "imageable_id": 15,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:12.000000Z",
+        "updated_at": "2024-04-20T20:31:12.000000Z"
+      },
+      "type": [
+        {
+          "id": 4,
+          "type_name": "poison",
+          "color": "background-color: rgb(85, 21, 82);",
+          "damage_type_id": 4,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 15,
+            "type_id": 4
+          }
+        },
+        {
+          "id": 7,
+          "type_name": "bug",
+          "color": "background-color: rgb(79, 114, 59);",
+          "damage_type_id": 7,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 15,
+            "type_id": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "pok_name": "pidgey",
+      "pok_height": 3,
+      "pok_weight": 18,
+      "pok_base_experience": 50,
+      "image": {
+        "id": 16,
+        "url": "pokeapi.co/storage/Pokemons/16.gif",
+        "imageable_id": 16,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:12.000000Z",
+        "updated_at": "2024-04-20T20:31:12.000000Z"
+      },
+      "type": [
+        {
+          "id": 1,
+          "type_name": "normal",
+          "color": "bg-secondary",
+          "damage_type_id": 1,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 16,
+            "type_id": 1
+          }
+        },
+        {
+          "id": 3,
+          "type_name": "flying",
+          "color": "background-color: rgb(238, 233, 225);",
+          "damage_type_id": 3,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 16,
+            "type_id": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "pok_name": "pidgeotto",
+      "pok_height": 11,
+      "pok_weight": 300,
+      "pok_base_experience": 122,
+      "image": {
+        "id": 17,
+        "url": "pokeapi.co/storage/Pokemons/17.gif",
+        "imageable_id": 17,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:12.000000Z",
+        "updated_at": "2024-04-20T20:31:12.000000Z"
+      },
+      "type": [
+        {
+          "id": 1,
+          "type_name": "normal",
+          "color": "bg-secondary",
+          "damage_type_id": 1,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 17,
+            "type_id": 1
+          }
+        },
+        {
+          "id": 3,
+          "type_name": "flying",
+          "color": "background-color: rgb(238, 233, 225);",
+          "damage_type_id": 3,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 17,
+            "type_id": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "pok_name": "pidgeot",
+      "pok_height": 15,
+      "pok_weight": 395,
+      "pok_base_experience": 216,
+      "image": {
+        "id": 18,
+        "url": "pokeapi.co/storage/Pokemons/18.gif",
+        "imageable_id": 18,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:12.000000Z",
+        "updated_at": "2024-04-20T20:31:12.000000Z"
+      },
+      "type": [
+        {
+          "id": 1,
+          "type_name": "normal",
+          "color": "bg-secondary",
+          "damage_type_id": 1,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 18,
+            "type_id": 1
+          }
+        },
+        {
+          "id": 3,
+          "type_name": "flying",
+          "color": "background-color: rgb(238, 233, 225);",
+          "damage_type_id": 3,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 18,
+            "type_id": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "pok_name": "rattata",
+      "pok_height": 3,
+      "pok_weight": 35,
+      "pok_base_experience": 51,
+      "image": {
+        "id": 19,
+        "url": "pokeapi.co/storage/Pokemons/19.gif",
+        "imageable_id": 19,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:12.000000Z",
+        "updated_at": "2024-04-20T20:31:12.000000Z"
+      },
+      "type": [
+        {
+          "id": 1,
+          "type_name": "normal",
+          "color": "bg-secondary",
+          "damage_type_id": 1,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 19,
+            "type_id": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "pok_name": "raticate",
+      "pok_height": 7,
+      "pok_weight": 185,
+      "pok_base_experience": 145,
+      "image": {
+        "id": 20,
+        "url": "pokeapi.co/storage/Pokemons/20.gif",
+        "imageable_id": 20,
+        "imageable_type": "App\\Models\\Pokemon",
+        "created_at": "2024-04-20T20:31:12.000000Z",
+        "updated_at": "2024-04-20T20:31:12.000000Z"
+      },
+      "type": [
+        {
+          "id": 1,
+          "type_name": "normal",
+          "color": "bg-secondary",
+          "damage_type_id": 1,
+          "created_at": null,
+          "updated_at": null,
+          "pivot": {
+            "pokemon_id": 20,
+            "type_id": 1
+          }
+        }
+      ]
+    }
+  ]
