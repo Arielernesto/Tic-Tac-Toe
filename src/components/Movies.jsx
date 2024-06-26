@@ -3,11 +3,11 @@
 export function ListOfPokemons( {pokemons} ){
 
    return( 
-   <ul>
+   <ul className="movies">
 {
       pokemons.map(pokemon => (
-            <li key={pokemon.id}>
-                <h3>{pokemon.pok_name}</h3>
+            <li className="movie" key={pokemon.id}>
+                <h3>{pokemon.name}</h3>
                 <p>
                     {
                         pokemon.type.map(type =>(
@@ -15,7 +15,7 @@ export function ListOfPokemons( {pokemons} ){
                         ))
                     }
                 </p>
-                <img src={"http://" + pokemon.image.url} alt="" />
+                <img src={"http://" + pokemon.image} alt="" />
             </li>
         ))
     }
@@ -23,15 +23,18 @@ export function ListOfPokemons( {pokemons} ){
    )
 }
 
+
 export function NoPokemonsFound(){
     return (
-        <span> No hay resultados</span>
+        <span style={{
+            display: 'block',
+            textAlign: 'center'
+        }}> No hay resultados</span>
     )
 }
 
 // eslint-disable-next-line react/prop-types
 export function Pokemons({pokemons}){
-    console.log( 2 + 2)
     const hasPokemons  = pokemons?.length > 0
     return(
         hasPokemons
