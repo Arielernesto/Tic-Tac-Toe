@@ -1,9 +1,11 @@
 // import pokemons from '../pokemons/results.json'
 
-import { useState } from "react"
+import { useRef } from "react"
+import { useState, useMemo } from "react"
 
-export function usePokemons(){
+export function usePokemons({search, sort}){
     const [pokemons, setPokemons] = useState()
+    const previusSearch = useRef(search)
     const mappedPokemons = pokemons?.map(pokemon => ({
         id: pokemon.id,
         name: pokemon.pok_name,
@@ -11,8 +13,11 @@ export function usePokemons(){
         image: pokemon.image.url
     }))
     const getPokemons = ({search})  =>{
-        if (search) {
+        if (search == previusSearch.current) {
+            return
+         }
             try{
+            previusSearch.current = search
             fetch(`http://localhost/PokeApi/Api_pokemon/public/api/pokemons/${search}/search`)
             .then(res => res.json())
             .then(json =>{
@@ -21,10 +26,15 @@ export function usePokemons(){
         } catch(e) {
             console.log(e)
         }
-        }
-        else{
-            return []
-        }
     }
-    return {mappedPokemons , getPokemons}
+    // const sortedPokemons = sort
+    // ? [...mappedPokemons].sort((a,b) => a.name.localeCompare(b.name))
+    // : mappedPokemons
+    const sortedPokemons = useMemo(() =>{
+        console.log('render')
+        return sort
+         ? [...mappedPokemons].sort((a,b) => a.name.localeCompare(b.name))
+         : mappedPokemons
+    }, [sort, pokemons])
+    return {mappedPokemons: sortedPokemons , getPokemons, sortedPokemons}
 }

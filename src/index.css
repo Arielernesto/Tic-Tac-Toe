@@ -80,3 +80,15 @@ button:hover{
     padding-left: 5px;
     }
 }
+label{
+    color: #ccc;
+    align-items: center;
+    justify-content: end;
+    display: flex;
+    order: 1;
+    input{
+        order: 0;
+        width: auto;
+        display: inline-block;
+    }
+}
