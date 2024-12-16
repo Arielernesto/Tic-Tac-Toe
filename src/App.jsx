@@ -1,67 +1,61 @@
-import './index.css'
-import { Pokemons } from './components/Movies'
-import { usePokemons } from './hooks/usePokemons'
-import { useSearch } from './hooks/useSearch'
+import './output.css'
 import { useState } from 'react'
-import debounce from 'just-debounce-it'
-import { useCallback } from 'react'
+import { motion } from "framer-motion"
+import SwitchSelector from "react-switch-selector";
+import AccordionBike from './Accordion';
 
 function App(){
-    const [sort, setSort] = useState(false)
-    const {search, updateSearch , error} = useSearch()   
-    const {mappedPokemons, getPokemons, sortedPokemons} = usePokemons({search, sort})
+    const [isSwapped, setIsSwapped] = useState(false)
 
-    const debounceGetMovies = useCallback(
-        debounce(() =>{
-          getPokemons({search})  
-        }, 300)
-        , [getPokemons]
-    )
-    const handleSubmit = (event) =>{
-        event.preventDefault()
-        const fields = new window.FormData(event.target)
-        const query = fields.get('query')
-        updateSearch(query)
-        if (!error) {
-        getPokemons({search})
-        }
+    const handleSwap = () => {
+      setIsSwapped(!isSwapped)
     }
-    const handleChange = (event) => {
-        updateSearch(event.target.value)
-        debounceGetMovies({search})
-            
-    }
-    const handleOrder = () =>{
-        setSort(!sort)
-       
-    }
+
     return (
-        <main>
-            <header>
-            <h1>Api Pokemon</h1>
-            <form action="" onSubmit={handleSubmit}>
-            <input onChange={handleChange}  name="query"  type="text" placeholder='Pikachu, Charmander, Charizard...' />
-            <button type='submit'>Buscar</button>
-            </form>
-            <label htmlFor="order" className='order'>
-                <span >Ordenar Alfabéticamente</span>
-            <input onClick={handleOrder} type="checkbox" name="order" id="" />
-            </label>
-            </header>
-            <section className='content'>
-            {
-                
-                    error && (
-                        <span className='error'>{error}</span>
-                    )
-                }
-                {
-                    <Pokemons pokemons={mappedPokemons}></Pokemons>
-                }
-               
-                
-            </section>
-        </main> 
+        <section>
+            <div style={{height: 40, width: 100 }}>
+                <SwitchSelector
+                    backgroundColor={"#353b48"}
+                    selectedBackgroundColor={"#000"}
+                    // selectedFontColor={"000"}
+                    initialSelectedIndex={0}
+                    onChange={() => handleSwap()}
+                    options={[
+                    {
+                        label: 'Blue',
+                        value: true
+                    },
+                    {
+                        label: 'Red',
+                        value: 20
+                    }
+                    ]}
+            />
+            </div>
+        <div className="container-bike container-bike-component">
+            <div className="bike">
+                <motion.div
+                    className="child"
+                    initial={{ left: 0 }}
+                    animate={{ left: isSwapped ? "calc(100% - 228px)" : 0 }}
+                    transition={{ type: "spring", stiffness: 120, damping: 20 }}
+                >
+                <AccordionBike />
+                </motion.div>
+                <motion.div
+                    className="child"
+                    initial={{ right: 0 }}
+                    animate={{ right: isSwapped ? "calc(100% - 128px)" : 0 }}
+                    transition={{ type: "spring", stiffness: 120, damping: 20 }}
+                />
+      </div>
+      <button onClick={handleSwap} className="px-6 py-3 text-lg">
+        Intercambiar Cubos
+      </button>
+    </div>
+    </section>
+
     )
 }
+
 export default App
