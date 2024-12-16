@@ -1,0 +1,73 @@
+body {
+    font-family: sans-serif;
+  }
+  
+  .list li {
+    margin: 0.75rem 0;
+  }
+  
+  .info {
+    color: rgb(0, 49, 0);
+    background-color: rgb(230, 246, 230);
+    padding: 1rem;
+    border-radius: 4px;
+  }
+  
+  .accordion {
+    border-top: 1px solid #ccc;
+    margin-top: 1rem;
+    margin: 0 !important;
+  }
+  
+  .item {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .itemBtn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: left;
+    color: #000;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+  }
+  
+  .itemBtn:hover {
+    background-color: #bbb;
+    /* transition: .3s ease; */
+  }
+/*   
+  .itemBtnExpanded {
+    background-color: #e7e7e7;
+  } */
+  
+  .itemContent {
+    transition: height 0.25s cubic-bezier(0, 0, 0, 1);
+  }
+  
+  .itemPanel {
+    padding: 1rem;
+  }
+  
+  .chevron {
+    margin-left: auto;
+    transition: transform 0.25s cubic-bezier(0, 0, 0, 1);
+  }
+  
+  .itemBtnExpanded .chevron {
+    transform: rotate(180deg);
+  }
+
+  .container{
+    background-color: #ccc;
+    display: inline-block !important;
+    padding: 20px !important;
+    padding-top: 15px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5), /* Sombra principal más oscura e intensa, menos expansiva */ 0 0 10px rgba(255, 255, 255, 0.3), /* Resplandor brillante menos expansivo */ 0 0 20px rgba(255, 255, 255, 0.5); /* Resplandor adicional para mayor intensidad, menos expansivo */
+  }
