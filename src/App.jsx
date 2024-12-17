@@ -8,7 +8,7 @@ function App(){
     const [isSwapped, setIsSwapped] = useState(false)
     const [buttonActive, setButtonActive] = useState(1)
     const [heightBici, setHeightBici] = useState(1)
-    
+
     const dataFuoco = [
         {
             id: 1,
@@ -79,7 +79,7 @@ function App(){
                 </motion.div>
 
                 <motion.div
-                    className="child"
+                    className="child margen-top"
                     initial={{ left: 0, opacity: 1 }}
                     animate={{ left: isSwapped ? "calc(100% - 528px)" : 0 , }}
                     transition={{ 
