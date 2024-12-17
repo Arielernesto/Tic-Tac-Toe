@@ -3,17 +3,65 @@ import { useState } from 'react'
 import { motion } from "framer-motion"
 import SwitchSelector from "react-switch-selector";
 import AccordionBike from './Accordion';
+import { useEffect } from 'react';
 
 function App(){
     const [isSwapped, setIsSwapped] = useState(false)
     const [buttonActive, setButtonActive] = useState(1)
     const [heightBici, setHeightBici] = useState(1)
 
-    const dataFuoco = [
+    useEffect(() => {
+        setButtonActive(1)
+    }, [isSwapped]);
+    const data = isSwapped ? {
+        description: `Sálgase de lo común, monte una bicicleta de diseño Italiano, de marco aerodinámico, de la más alta tecnología en su rango.
+- Peso: 11 kg
+- Tenedor : Carbono – Aprobado UCI
+- Tipo de Marco: Aerodinámico en Aluminio -Aprobado por la UCI – Cableado Totalmente Interno
+- Tamaño de las Llantas: 700C – con eje pasante E-thru
+- Frenos: Hidraúlicos L-twoo
+- Grupo: Cambiador, descarrilador y tensor Shimano 105 7120 de 12 velocidades
+- Manubrio: Integrado, DECAF, Aleación, 31.8*420
+- Tamaño del Marco: 450 (XS), 480 (S), 500 (M), 520 (L)
+`,
+        dimensions: "",
+        heights: [],
+        price: "",
+        peso: "",
+        bikes : [
+            {
+                id: 1,
+                color: "rgb(70, 73, 77)",
+                image: "./bici-siluro-black.png"
+            },
+            {
+                id: 2,
+                color: "#8da9ba",
+                image: "./bici-siluro-blue.png"
+            },
+            {
+                id: 3,
+                color: "#ab94c4",
+                image: "./bici-siluro-purple.png"
+            },
+            {
+                id: 4,
+                color: "#237aad",
+                image: "./bici-siluro-green.png"
+            }
+        ]
+    } : 
+    {
+    description: "",
+    dimensions: "",
+    heights: [],
+    price: "",
+    peso: "",
+    bikes : [
         {
             id: 1,
             color: "rgb(26, 63, 100)",
-            image: "./bici-fuoco-white.png"
+            image: "./bici-fuoco-titanium.png"
         },
         {
             id: 2,
@@ -23,9 +71,10 @@ function App(){
         {
             id: 3,
             color: "rgb(70, 73, 77)",
-            image: "./bici-fuoco-white.png"
+            image: "./bici-fuoco-black.png"
         }
     ]
+    }
     const handleSwap = () => {
       setIsSwapped(!isSwapped)
     }
@@ -34,7 +83,7 @@ function App(){
         <section>
         <div style={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
             <div></div>
-            <h2 style={{fontSize: "34px", color: "#fff", transition: ".4s"}}>Bicicleta de Ruta {isSwapped ? "Fuoco" : "Siluro"} Top</h2>
+            <h2 style={{fontSize: "34px", color: "#fff", transition: ".4s"}}>Bicicleta de Ruta {isSwapped ? "Siluro" : "Fuoco"} Top</h2>
             <div style={{height: 40, width: 100, marginRight: "70px" }}>
                 <SwitchSelector
                     backgroundColor={"#ccc"}
@@ -45,11 +94,11 @@ function App(){
                     options={[
                     {
                         label: 'Fuoco',
-                        value: true
+                        value: "fuoco"
                     },
                     {
                         label: 'Siluro',
-                        value: 20
+                        value: "siluro"
                     }
                     ]}
                 />
@@ -68,10 +117,10 @@ function App(){
                         ease: "easeInOut",
                       }}
                 >
-                    <img src="./bici-fuoco-white.png" alt="" style={{ marginLeft: "30px"  ,width: "700px", height: "500px"}} />
+                    <img src={data.bikes.find(i => i?.id == buttonActive)?.image} alt="" style={{ marginLeft: "30px"  ,width: "700px", height: "400px", marginRight: isSwapped ? "30px" : "0"}} />
                     <div className="buttons-color">
-                        {dataFuoco.map(data => (
-                            <button key={data.id} style={{ backgroundColor: data.color}} onClick={() => setButtonActive(data.id)} className={`${buttonActive == data.id ? "button-active" : ""}`}   />
+                        {data.bikes.map(data => (
+                            <button key={data?.id} style={{ backgroundColor: data?.color}} onClick={() => setButtonActive(data?.id)} className={`${buttonActive == data?.id ? "button-active" : ""}`}   />
                         ))
 
                         }
@@ -92,7 +141,7 @@ function App(){
                         ease: "easeInOut"
                       }}
                 >
-                <AccordionBike />
+                <AccordionBike data={data}/>
                 
                 <div className="staff-container">
                     <div className='section-staff'>

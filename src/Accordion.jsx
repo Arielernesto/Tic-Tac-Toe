@@ -5,7 +5,7 @@ import './output.css'
 /**
  * @type {React.ExoticComponent<import('@szhsin/react-accordion').AccordionItemProps>}
  */
-const AccordionItem = ({ header, ...rest }) => (
+const AccordionItem = ({ header, ...rest  }) => (
   <Item
     {...rest}
     header={
@@ -24,15 +24,14 @@ const AccordionItem = ({ header, ...rest }) => (
   />
 );
 
-export default function AccordionBike() {
+export default function AccordionBike({ data }) {
   return (
     <div className={styles.container} style={{width: "400px",  borderRadius: "5px"}} >
       <div className={styles.accordion} style={{width: "400px"}}>
         {/* `transitionTimeout` prop should be equal to the transition duration in CSS */}
         <Accordion transition transitionTimeout={250}>
           <AccordionItem header="Características" initialEntered>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+           {data.description}
           </AccordionItem>
 
           <AccordionItem header="Dimensiones">
