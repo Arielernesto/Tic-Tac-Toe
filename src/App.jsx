@@ -7,7 +7,8 @@ import AccordionBike from './Accordion';
 function App(){
     const [isSwapped, setIsSwapped] = useState(false)
     const [buttonActive, setButtonActive] = useState(1)
-
+    const [heightBici, setHeightBici] = useState(1)
+    
     const dataFuoco = [
         {
             id: 1,
@@ -88,6 +89,25 @@ function App(){
                       }}
                 >
                 <AccordionBike />
+                
+                <div className="staff-container">
+                    <div className='section-staff'>
+                        <span>Precio: </span>
+                        <span>8.100.000$</span>
+                    </div>
+                    <div className='section-staff' style={{display: "flex", alignItems: "center"}}>
+                        <span>Tamaños: </span>
+                        <div className='height-buttons'>
+                        <button>480</button>
+                        <button>510</button>
+                        <button>540</button>
+                        </div>
+                    </div>
+                    <div className='section-staff'>
+                        <span>Peso: </span>
+                        <span>9 kg</span>
+                    </div>
+                </div>
                 </motion.div>
               
       </div>

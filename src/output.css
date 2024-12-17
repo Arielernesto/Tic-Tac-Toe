@@ -198,3 +198,38 @@ body{
   padding-top: 15px !important;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) /* Sombra principal más oscura e intensa, menos expansiva */ 0 0 10px rgba(255, 255, 255, 0.3), /* Resplandor brillante menos expansivo */ 0 0 20px rgba(255, 255, 255, 0.5) !important; /* Resp */
 }
+
+.staff-container{
+  width: 250px;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-left: 50px;
+  color: #fff;
+}
+
+.section-staff{
+  padding-top: 15px !important;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.height-buttons{
+  & button {
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5px;
+    background: transparent;
+    border: none;
+    color: #fff;
+  }
+  & button:hover{
+    background-color: #fff;
+    color: #222;
+    transition: .2s ease;
+  }
+}
