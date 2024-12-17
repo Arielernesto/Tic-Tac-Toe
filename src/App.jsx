@@ -59,7 +59,7 @@ function App(){
         <div className="container-bike container-bike-component">
             <div className="bike">
                   <motion.div
-                    className="child"
+                    className="child margen-top"
                     initial={{ right: 0, opacity: 1 }}
                     animate={{ right: isSwapped ? "calc(100% - 628px)" : 0, opacity: isSwapped ? [0.6,0.0,0,0.4,0.6,1] : [1,0.6,0,0.0,0.4,0.6,1]}}
                     transition={{ 
@@ -75,6 +75,10 @@ function App(){
                         ))
 
                         }
+                    </div>
+
+                    <div style={{display: "flex", justifyContent: "center", marginTop: "50px"}}>
+                        <button className="cart-add-button">Agregar al Carrito</button>
                     </div>
                 </motion.div>
 
