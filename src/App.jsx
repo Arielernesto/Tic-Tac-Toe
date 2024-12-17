@@ -6,7 +6,25 @@ import AccordionBike from './Accordion';
 
 function App(){
     const [isSwapped, setIsSwapped] = useState(false)
+    const [buttonActive, setButtonActive] = useState(1)
 
+    const dataFuoco = [
+        {
+            id: 1,
+            color: "rgb(26, 63, 100)",
+            image: "./bici-fuoco-white.png"
+        },
+        {
+            id: 2,
+            color: "#fff",
+            image: "./bici-fuoco-white.png"
+        },
+        {
+            id: 3,
+            color: "rgb(70, 73, 77)",
+            image: "./bici-fuoco-white.png"
+        }
+    ]
     const handleSwap = () => {
       setIsSwapped(!isSwapped)
     }
@@ -25,11 +43,11 @@ function App(){
                     onChange={() => handleSwap()}
                     options={[
                     {
-                        label: 'Siluro',
+                        label: 'Fuoco',
                         value: true
                     },
                     {
-                        label: 'Fuoco',
+                        label: 'Siluro',
                         value: 20
                     }
                     ]}
@@ -39,9 +57,29 @@ function App(){
 
         <div className="container-bike container-bike-component">
             <div className="bike">
+                  <motion.div
+                    className="child"
+                    initial={{ right: 0, opacity: 1 }}
+                    animate={{ right: isSwapped ? "calc(100% - 628px)" : 0, opacity: isSwapped ? [0.6,0.0,0,0.4,0.6,1] : [1,0.6,0,0.0,0.4,0.6,1]}}
+                    transition={{ 
+                        duration: .8,
+                        times: [0, 0.4, 0.6, 1],
+                        ease: "easeInOut",
+                      }}
+                >
+                    <img src="./bici-fuoco-white.png" alt="" style={{ marginLeft: "30px"  ,width: "700px", height: "500px"}} />
+                    <div className="buttons-color">
+                        {dataFuoco.map(data => (
+                            <button key={data.id} style={{ backgroundColor: data.color}} onClick={() => setButtonActive(data.id)} className={`${buttonActive == data.id ? "button-active" : ""}`}   />
+                        ))
+
+                        }
+                    </div>
+                </motion.div>
+
                 <motion.div
                     className="child"
-                    initial={{ left: 0 }}
+                    initial={{ left: 0, opacity: 1 }}
                     animate={{ left: isSwapped ? "calc(100% - 528px)" : 0 , }}
                     transition={{ 
                         duration: .8,
@@ -51,18 +89,7 @@ function App(){
                 >
                 <AccordionBike />
                 </motion.div>
-                <motion.div
-                    className="child"
-                    initial={{ right: 0 }}
-                    animate={{ right: isSwapped ? "calc(100% - 628px)" : 0, opacity: isSwapped ? [0.6,0.0,0,0.4,0.6,1] : [1,0.6,0,0.0,0.4,0.6,1]}}
-                    transition={{ 
-                        duration: .8,
-                        times: [0, 0.4, 0.6, 1],
-                        ease: "easeInOut",
-                      }}
-                >
-                    <img src="./bici-fuoco-white.png" alt="" style={{ marginLeft: "30px"  ,width: "700px", height: "500px"}} />
-                </motion.div>
+              
       </div>
     </div>
     </section>

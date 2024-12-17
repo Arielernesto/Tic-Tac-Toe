@@ -137,10 +137,34 @@ body{
   display: flex;
   align-items: center;
 }
+
+.buttons-color{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  & button {
+  border: none !important;
+  border-radius: 99999px;
+  width: 80px !important;
+  height: 10px;
+  }
+  & button:hover{
+    box-shadow: 0 8px 12px 0 rgba(127, 255, 212, 0.75);/* Sombra en la parte inferior en color aquamarina */ 
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+  }
+}
+
+.button-active{
+  box-shadow: 0 8px 12px 0 rgba(127, 255, 212, 0.75);/* Sombra en la parte inferior en color aquamarina */ 
+}
+
 .child {
   position: absolute;
   /* height: 8rem;
   width: 8rem; */
+  padding-bottom: 30px;
+
 }
 .block {
   display: block;
