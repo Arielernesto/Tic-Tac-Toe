@@ -119,7 +119,8 @@ body{
 }
 .container-bike {
   display: flex;
-  min-height: 100vh;
+  /* min-height: 100vh; */
+  margin-top: 70px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -132,18 +133,14 @@ body{
   margin-bottom: 2rem;
   height: 16rem;
   width: 100%;
-  max-width: 42rem;
+  max-width: 72rem;
+  display: flex;
+  align-items: center;
 }
 .child {
   position: absolute;
-  height: 8rem;
-  width: 8rem;
-  border-radius: 0.5rem;
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  /* height: 8rem;
+  width: 8rem; */
 }
 .block {
   display: block;
