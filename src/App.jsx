@@ -124,7 +124,8 @@ function App(){
         <div className="container-bike container-bike-component">
             <div className="bike">
                   <motion.div
-                    className="child margen-top"
+                    className="child"
+                    style={{marginTop: "100px"}}
                     initial={{ right: 0, opacity: 1 }}
                     animate={{ right: isSwapped ? "calc(100% - 628px)" : 0, opacity: isSwapped ? [0.6,0.0,0,0.4,0.6,1] : [1,0.6,0,0.0,0.4,0.6,1]}}
                     transition={{ 
@@ -159,7 +160,7 @@ function App(){
 
                 <motion.div
                     className="child"
-                    style={{ marginTop: "100px"}}
+                    style={{ marginTop: "160px"}}
                     initial={{ left: 0, opacity: 1 }}
                     animate={{ left: isSwapped ? "calc(100% - 528px)" : 0 , }}
                     transition={{ 
