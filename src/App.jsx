@@ -5,29 +5,28 @@ import SwitchSelector from "react-switch-selector";
 import AccordionBike from './Accordion';
 import { useEffect } from 'react';
 
+
 function App(){
     const [isSwapped, setIsSwapped] = useState(false)
     const [buttonActive, setButtonActive] = useState(1)
     const [heightBici, setHeightBici] = useState(1)
 
-    useEffect(() => {
-        setButtonActive(1)
-    }, [isSwapped]);
     const data = isSwapped ? {
-        description: `Sálgase de lo común, monte una bicicleta de diseño Italiano, de marco aerodinámico, de la más alta tecnología en su rango.
-- Peso: 11 kg
-- Tenedor : Carbono – Aprobado UCI
-- Tipo de Marco: Aerodinámico en Aluminio -Aprobado por la UCI – Cableado Totalmente Interno
-- Tamaño de las Llantas: 700C – con eje pasante E-thru
-- Frenos: Hidraúlicos L-twoo
-- Grupo: Cambiador, descarrilador y tensor Shimano 105 7120 de 12 velocidades
-- Manubrio: Integrado, DECAF, Aleación, 31.8*420
-- Tamaño del Marco: 450 (XS), 480 (S), 500 (M), 520 (L)
-`,
-        dimensions: "",
-        heights: [],
-        price: "",
-        peso: "",
+        description: {
+            h1: "Sálgase de lo común, monte una bicicleta de diseño Italiano, de marco aerodinámico, de la más alta tecnología en su rango.",
+            peso: "Peso: 11 kg",
+            tenedor: "Tenedor: Carbono – Aprobado UCI",
+            tipoDeMarco: "Tipo de Marco: Aerodinámico en Aluminio -Aprobado por la UCI – Cableado Totalmente Interno",
+            tamañoDeLasLlantas: "Tamaño de las Llantas: 700C – con eje pasante E-thru",
+            frenos: "Frenos: Hidraúlicos L-twoo",
+            grupo: "Grupo: Cambiador, descarrilador y tensor Shimano 105 7120 de 12 velocidades",
+            manubrio: "Manubrio: Integrado, DECAF, Aleación, 31.8*420",
+            tamañoDelMarco: "Tamaño del Marco: 450 (XS), 480 (S), 500 (M), 520 (L)"
+        },
+        dimensions: ["450 – XS: 1.56 -1.64", "480 – S: 1.63 -1.72", "500 – M: 1.69 -1.77", "520 – L: 1.76 – 1.83"],
+        heights: [450,480,500,520],
+        price: "4.990.000$",
+        peso: "11 Kg",
         bikes : [
             {
                 id: 1,
@@ -52,11 +51,22 @@ function App(){
         ]
     } : 
     {
-    description: "",
-    dimensions: "",
-    heights: [],
-    price: "",
-    peso: "",
+    description: {
+            h1: "Sálgase de lo común, diferénciese del resto, monte una bicicleta de diseño Italiano, toda en carbono, de marco aerodinámico y con la más alta tecnología en su rango.",
+            peso: "Peso: 8.5 kg",
+            tenedor: "Tenedor: Carbono – Aprobado UCI",
+            tipoDeMarco: "Tipo de Marco: Aerodinámico en Carbono -Aprobado por la UCI – Cableado Totalmente Interno",
+            // tamañoDeLasLlantas: "700C – con eje pasante E-thru",
+            rines: "Rines: En Carbono 700C con perfil de 50mm",
+            // frenos: "Hidraúlicos L-twoo",
+            grupo: "Grupo: Cambiador, descarrilador y tensor Shimano 105 7120 de 12 velocidades",
+            manubrio: "Manubrio: Integrado, en Carbono, 31.8*420",
+            tamañoDelMarco: "Tamaño del Marco: 450 (XS), 480 (S), 510 (M), 540 (L)"
+    },
+    dimensions: ["450 – XS: Menor 1.62", "480 – S: 1.62 -1.69", "510 – M: 1.69 -1.76", "540 – L: 1.76 – 1.83"],
+    heights: [450,480,510,540],
+    price: "7.790.000$",
+    peso: "8.5 Kg",
     bikes : [
         {
             id: 1,
@@ -75,6 +85,12 @@ function App(){
         }
     ]
     }
+
+    useEffect(() => {
+        setButtonActive(1)
+        setHeightBici(data.heights[0])
+    }, [isSwapped]);
+   
     const handleSwap = () => {
       setIsSwapped(!isSwapped)
     }
@@ -117,22 +133,33 @@ function App(){
                         ease: "easeInOut",
                       }}
                 >
-                    <img src={data.bikes.find(i => i?.id == buttonActive)?.image} alt="" style={{ marginLeft: "30px"  ,width: "700px", height: "400px", marginRight: isSwapped ? "30px" : "0"}} />
-                    <div className="buttons-color">
-                        {data.bikes.map(data => (
-                            <button key={data?.id} style={{ backgroundColor: data?.color}} onClick={() => setButtonActive(data?.id)} className={`${buttonActive == data?.id ? "button-active" : ""}`}   />
-                        ))
-
-                        }
+                    <img src={data.bikes.find(i => i?.id == buttonActive)?.image} alt="" style={{ marginLeft: "30px"  ,width: "700px", height: "400px", marginRight: isSwapped ? "30px" : "0", marginTop: "80px"}} />
+                    
+                <div className="staff-container">
+                    <div className='section-staff'>
+                        <span>Precio: </span>
+                        <span>{data.price}</span>
                     </div>
-
-                    <div style={{display: "flex", justifyContent: "center", marginTop: "50px"}}>
-                        <button className="cart-add-button">Agregar al Carrito</button>
+                    <div className='section-staff' style={{display: "flex", alignItems: "center"}}>
+                        <span>Tamaños: </span>
+                        <div className='height-buttons'>
+                       {data.heights.map((i, index) => (
+                         <button key={index} onClick={() => { setHeightBici(i) }} className={`${heightBici == i ? 'active-height' : ''}`}>{i}</button>
+                       ))
+                       }
+                        </div>
                     </div>
+                    <div className='section-staff'>
+                        <span>Peso: </span>
+                        <span>{data.peso}</span>
+                    </div>
+                </div>
+
                 </motion.div>
 
                 <motion.div
-                    className="child margen-top"
+                    className="child"
+                    style={{ marginTop: "100px"}}
                     initial={{ left: 0, opacity: 1 }}
                     animate={{ left: isSwapped ? "calc(100% - 528px)" : 0 , }}
                     transition={{ 
@@ -142,24 +169,18 @@ function App(){
                       }}
                 >
                 <AccordionBike data={data}/>
-                
-                <div className="staff-container">
-                    <div className='section-staff'>
-                        <span>Precio: </span>
-                        <span>8.100.000$</span>
-                    </div>
-                    <div className='section-staff' style={{display: "flex", alignItems: "center"}}>
-                        <span>Tamaños: </span>
-                        <div className='height-buttons'>
-                        <button>480</button>
-                        <button>510</button>
-                        <button>540</button>
-                        </div>
-                    </div>
-                    <div className='section-staff'>
-                        <span>Peso: </span>
-                        <span>9 kg</span>
-                    </div>
+                <div>
+                <div className="buttons-color" style={{marginTop: "30px"}}>
+                        {data.bikes.map(data => (
+                            <button key={data?.id} style={{ backgroundColor: data?.color}} onClick={() => setButtonActive(data?.id)} className={`${buttonActive == data?.id ? "button-active" : ""}`}   />
+                        ))
+
+                        }
+                </div>
+
+                <div style={{display: "flex", justifyContent: "center", marginTop: "50px"}}>
+                    <button className="cart-add-button">Agregar al Carrito</button>
+                </div>
                 </div>
                 </motion.div>
               
