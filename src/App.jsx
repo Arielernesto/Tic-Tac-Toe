@@ -125,7 +125,7 @@ function App(){
             <div className="bike">
                   <motion.div
                     className="child"
-                    style={{marginTop: "100px"}}
+                    style={{marginTop: "130px"}}
                     initial={{ right: 0, opacity: 1 }}
                     animate={{ right: isSwapped ? "calc(100% - 628px)" : 0, opacity: isSwapped ? [0.6,0.0,0,0.4,0.6,1] : [1,0.6,0,0.0,0.4,0.6,1]}}
                     transition={{ 
@@ -134,8 +134,8 @@ function App(){
                         ease: "easeInOut",
                       }}
                 >
-                    <img src={data.bikes.find(i => i?.id == buttonActive)?.image} alt="" style={{ marginLeft: "30px"  ,width: "700px", height: "400px", marginRight: isSwapped ? "30px" : "0", marginTop: "80px"}} />
-                    
+                    <img src={data.bikes.find(i => i?.id == buttonActive)?.image} alt="" style={{ marginLeft: "30px"  ,width: "700px", height: "400px", marginRight: isSwapped ? "30px" : "0", marginTop: "80px", paddingBottom: "30px"}} />
+            <div style={{ display: "flex", justifyContent: "center"}}>
                 <div className="staff-container">
                     <div className='section-staff'>
                         <span>Precio: </span>
@@ -155,6 +155,7 @@ function App(){
                         <span>{data.peso}</span>
                     </div>
                 </div>
+            </div>
 
                 </motion.div>
 
