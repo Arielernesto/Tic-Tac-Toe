@@ -108,10 +108,10 @@
 
 body{
   margin: 0;
-  background-color: #222;
+  background-color: #000;
 }
 .container-bike-component{
-  background-color: #222 !important;
+  background-color: #000 !important;
 }
 /* Make elements with the HTML hidden attribute stay hidden by default */
 [hidden] {
