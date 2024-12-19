@@ -265,3 +265,12 @@ body{
   background-color: #fff !important;
   color: #222 !important;
 }
+
+@media screen and (min-width: 1800px) {
+  .margin-select{
+    margin-right: 280px !important;
+  }
+  .container-bike{
+    margin-top: 100px !important;
+  }
+}

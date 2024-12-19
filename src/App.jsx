@@ -100,7 +100,7 @@ function App(){
         <div style={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
             <div></div>
             <h2 style={{fontSize: "34px", color: "#fff", transition: ".4s"}}>Bicicleta de Ruta {isSwapped ? "Siluro" : "Fuoco"} Top</h2>
-            <div style={{height: 40, width: 100, marginRight: "70px" }}>
+            <div style={{height: 40, width: 100, marginRight: "70px" }} className="margin-select">
                 <SwitchSelector
                     backgroundColor={"#ccc"}
                     selectedBackgroundColor={"#000"}
